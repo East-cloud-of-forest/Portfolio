@@ -1,0 +1,12 @@
+.button_comp{
+  transition: background-color 200ms;
+  cursor: pointer;
+
+  &:hover {
+    background-color: lighten(rgba(15, 20, 25, 1), 10%);
+  }
+
+  &.light:hover {
+    background-color: darken(white, 10%);
+  }
+}

@@ -1,0 +1,71 @@
+// 통합 제어
+$location: 10%;
+$speed: 400ms;
+$delay: 100ms;
+
+.transition-group {
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  // 올라가는 애니메이션
+  .Up-enter {
+    opacity: 0;
+    transform: translate(0, -$location);
+  }
+  .Up-enter-active {
+    opacity: 1;
+    transform: translate(0);
+    transition: opacity $speed, transform $speed;
+    transition-delay: $delay;
+  }
+  .Up-exit {
+    opacity: 1;
+    transform: translate(0);
+  }
+  .Up-exit-active {
+    opacity: 0;
+    transform: translate(0, $location);
+    transition: opacity $speed, transform $speed;
+  }
+  // 내려가는 애니메이션
+  .Down-enter {
+    opacity: 0;
+    transform: translate(0, $location);
+  }
+  .Down-enter-active {
+    opacity: 1;
+    transform: translate(0);
+    transition: opacity $speed, transform $speed;
+    transition-delay: $delay;
+  }
+  .Down-exit {
+    opacity: 1;
+    transform: translate(0);
+  }
+  .Down-exit-active {
+    opacity: 0;
+    transform: translate(0, -$location);
+    transition: opacity $speed, transform $speed;
+  }
+  // 클릭시 애니메이션
+  .Click-enter {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  .Click-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity $speed, transform $speed;
+    transition-delay: $delay;
+  }
+  .Click-exit {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .Click-exit-active {
+    opacity: 0;
+    transform: scale(0.7);
+    transition: opacity $speed, transform $speed;
+  }
+}
