@@ -3,16 +3,16 @@ import { regular, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import "../Css/Ui.scss";
 import classNames from "classnames";
 import ButtonComp from "./ButtonComp";
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-const UiComp = ({ light, setLight, RouteFunc }) => {
+const UiComp = ({ light, setLight, RouteFunc, hide }) => {
   const location = useLocation().pathname.slice(1);
 
   return (
-    <div className="router Ui">
+    <>
       <ButtonComp
         light={light}
-        className="go_to_main"
+        className={classNames("go_to_main", hide && "hide")}
         onClick={(e) => {
           RouteFunc(e, "main");
         }}
@@ -41,7 +41,7 @@ const UiComp = ({ light, setLight, RouteFunc }) => {
         )}
       </ButtonComp>
 
-      <div className="Nav">
+      <div className={classNames("Nav", hide && "hide")}>
         <ul>
           {["profile", "project", "contect"].map((a, i) => (
             <li key={i}>
@@ -57,7 +57,7 @@ const UiComp = ({ light, setLight, RouteFunc }) => {
           ))}
         </ul>
       </div>
-    </div>
+    </>
   );
 };
 

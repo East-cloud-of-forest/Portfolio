@@ -84,7 +84,12 @@ function App() {
 
   return (
     <div className={classNames("App", light && "light")}>
-      <UiComp light={light} setLight={setLight} RouteFunc={RouteFunc} />
+      <UiComp
+        light={light}
+        setLight={setLight}
+        RouteFunc={RouteFunc}
+        hide={routerNum === 0 ? true : false}
+      />
       <TransitionGroup className="transition-group">
         <CSSTransition
           key={location.pathname}
@@ -95,7 +100,7 @@ function App() {
             <Route
               index
               path="/"
-              element={<Main firstMainAnimation={firstMainAnimation} />}
+              element={<Main light={light} firstMainAnimation={firstMainAnimation} />}
             />
             <Route path="/profile" element={<Profile />} />
             <Route path="/project" element={<Project />} />
