@@ -1,8 +1,9 @@
+import classNames from 'classnames'
 import '../Css/Main.scss'
 
-const Main = () => {
+const Main = ({firstMainAnimation}) => {
   return (
-    <div className="router main_page">
+    <div className={classNames("router main_page", firstMainAnimation && 'firstAnimation')}>
         <h1>Main</h1>
     </div>
   )

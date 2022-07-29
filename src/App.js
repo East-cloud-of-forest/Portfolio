@@ -10,10 +10,9 @@ import {
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./App.scss";
 import "./Routers/RouterAnimation.scss";
-import MainUiComp from "./Components/UiComp";
+import UiComp from "./Components/UiComp";
 import Contect from "./Routers/Contect";
 import Main from "./Routers/Main";
-import Nav from "./Routers/Nav";
 import Profile from "./Routers/Profile";
 import Project from "./Routers/Project";
 
@@ -24,11 +23,14 @@ function App() {
   const [routerNum, setRouterNum] = useState(0);
   const [routeActive, setrouteActive] = useState(true);
   const [routeDirection, setRouteDirection] = useState("Down");
+  const [firstMainAnimation, setFirstMainAnimation] = useState(true);
 
   // 휠 함수
   const RouteFunc = (e, target) => {
     // 라우팅 가능 & 메인일 경우 위로 올리는게 아닐때 작동
     if (routeActive && !(e.wheelDelta > 0 && routerNum === 0)) {
+      // 첫 렌더링 때문 메인 애니메이션 작동
+      setFirstMainAnimation(false);
       let num = 0;
       // 휠로 변경할 경우
       if (e.type === "wheel") {
@@ -41,10 +43,19 @@ function App() {
         } else if (num > 3) {
           num = 3;
         }
-      // 클릭해서 변경할 경우
-      } else if (e.type === 'click') {
-        setRouteDirection("Click")
-        num = target === 'main' ? 0 :4
+        // 클릭해서 변경할 경우
+      } else if (e.type === "click") {
+        if (target === "main") {
+          // 메인 클릭시 애니메이션
+          setRouteDirection("Click");
+          num = 0;
+        } else {
+          // 네비게이션 클릭시 애니메이션
+          target - routerNum < 0
+            ? setRouteDirection("Up")
+            : setRouteDirection("Down");
+          num = target;
+        }
       }
 
       setRouterNum(num);
@@ -63,7 +74,6 @@ function App() {
     routerNum === 1 && nav("/profile");
     routerNum === 2 && nav("/project");
     routerNum === 3 && nav("/contect");
-    routerNum === 4 && nav("/navigation");
 
     // 이벤트 추가 및 제거
     window.addEventListener("wheel", RouteFunc, false);
@@ -74,7 +84,7 @@ function App() {
 
   return (
     <div className={classNames("App", light && "light")}>
-      <MainUiComp light={light} setLight={setLight} RouteFunc={RouteFunc} />
+      <UiComp light={light} setLight={setLight} RouteFunc={RouteFunc} />
       <TransitionGroup className="transition-group">
         <CSSTransition
           key={location.pathname}
@@ -82,8 +92,11 @@ function App() {
           timeout={500}
         >
           <Routes location={location}>
-            <Route index path="/" element={<Main />} />
-            <Route path="/navigation" element={<Nav />} />
+            <Route
+              index
+              path="/"
+              element={<Main firstMainAnimation={firstMainAnimation} />}
+            />
             <Route path="/profile" element={<Profile />} />
             <Route path="/project" element={<Project />} />
             <Route path="/contect" element={<Contect />} />

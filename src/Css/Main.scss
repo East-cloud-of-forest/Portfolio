@@ -3,8 +3,19 @@
   justify-content: center;
   align-items: center;
 
+  &.firstAnimation {
+    animation: main 0.6s;
+  }
+
   h1 {
     font-weight: 100;
     font-size: 5rem;
+  }
+}
+
+@keyframes main {
+  0% {
+    opacity: 0;
+    transform: translate(5%, 0);
   }
 }
