@@ -9,7 +9,7 @@
   h1 {
     font-family: "IBMPlexSansKR";
     font-weight: 100;
-    font-size: 3.5rem;
+    font-size: min(4.5vw, 3.5rem);
     margin: 0;
     text-shadow: 5px 5px 5px inherit;
     z-index: 1;
@@ -28,7 +28,7 @@
       z-index: 0;
       margin: 0;
       text-transform: uppercase;
-      font-size: 13rem;
+      font-size: 15vw;
       color: transparent;
       -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
       padding: 0 2rem;

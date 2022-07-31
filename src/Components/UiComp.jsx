@@ -43,7 +43,7 @@ const UiComp = ({ light, setLight, RouteFunc, hide }) => {
 
       <div className={classNames("Nav", hide && "hide")}>
         <ul>
-          {["profile", "project", "contect"].map((a, i) => (
+          {["profile", "project", "contact"].map((a, i) => (
             <li key={i}>
               <span
                 onClick={(e) => {

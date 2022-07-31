@@ -1,4 +1,4 @@
-const Contect = () => {
+const Contact = () => {
   return (
     <div className="router">
       Contect
@@ -6,4 +6,4 @@ const Contect = () => {
   )
 }
 
-export default Contect
+export default Contact

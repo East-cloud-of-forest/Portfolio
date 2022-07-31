@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import {
   Routes,
   Route,
-  NavLink,
   useLocation,
   useNavigate,
 } from "react-router-dom";
@@ -11,15 +10,15 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./App.scss";
 import "./Routers/RouterAnimation.scss";
 import UiComp from "./Components/UiComp";
-import Contect from "./Routers/Contect";
+import Contact from "./Routers/Contact";
 import Main from "./Routers/Main";
 import Profile from "./Routers/Profile";
 import Project from "./Routers/Project";
 
 function App() {
-  const [light, setLight] = useState(false);
   const location = useLocation();
   const nav = useNavigate();
+  const [light, setLight] = useState(false);
   const [routerNum, setRouterNum] = useState(0);
   const [routeActive, setrouteActive] = useState(true);
   const [routeDirection, setRouteDirection] = useState("Down");
@@ -69,18 +68,20 @@ function App() {
   };
 
   useEffect(() => {
-    // 라우터 맵핑
-    routerNum === 0 && nav("/");
-    routerNum === 1 && nav("/profile");
-    routerNum === 2 && nav("/project");
-    routerNum === 3 && nav("/contect");
-
     // 이벤트 추가 및 제거
-    window.addEventListener("wheel", RouteFunc, false);
+    window.addEventListener("wheel", RouteFunc);
     return () => {
-      window.removeEventListener("wheel", RouteFunc, false);
+      window.removeEventListener("wheel", RouteFunc);
     };
-  }, [routerNum, routeActive]);
+  }, [routeActive]);
+
+  useEffect(() => {
+    // 라우터 맵핑
+    routerNum === 0 && nav("/", { replace: true });
+    routerNum === 1 && nav("/profile", { replace: true });
+    routerNum === 2 && nav("/project", { replace: true });
+    routerNum === 3 && nav("/contact", { replace: true });
+  }, [routerNum]);
 
   return (
     <div className={classNames("App", light && "light")}>
@@ -100,11 +101,16 @@ function App() {
             <Route
               index
               path="/"
-              element={<Main light={light} firstMainAnimation={firstMainAnimation} />}
+              element={
+                <Main light={light} firstMainAnimation={firstMainAnimation} />
+              }
             />
-            <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/profile"
+              element={<Profile setRouterNum={setRouterNum} />}
+            />
             <Route path="/project" element={<Project />} />
-            <Route path="/contect" element={<Contect />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>
