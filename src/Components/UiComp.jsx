@@ -10,22 +10,23 @@ const UiComp = ({ light, setLight, RouteFunc, hide }) => {
 
   return (
     <>
-      <ButtonComp
-        light={light}
-        className={classNames("go_to_main", hide && "hide")}
-        onClick={(e) => {
-          RouteFunc(e, "main");
-        }}
-      >
-        <ul>
-          <li>
-            <FontAwesomeIcon icon={solid("arrow-left")} />
-          </li>
-          <li>
-            <p>MAIN</p>
-          </li>
-        </ul>
-      </ButtonComp>
+      <div className={classNames("go_to_main", hide && "hide")}>
+        <ButtonComp
+          light={light}
+          onClick={(e) => {
+            RouteFunc(e, "main");
+          }}
+        >
+          <ul>
+            <li>
+              <FontAwesomeIcon icon={solid("arrow-left")} />
+            </li>
+            <li>
+              <p>MAIN</p>
+            </li>
+          </ul>
+        </ButtonComp>
+      </div>
 
       <ButtonComp
         className="light_change"
