@@ -47,23 +47,30 @@
           }
         }
       }
+      // 버튼 뒤집기
+      &.flip {
+        transform: rotateY(180deg);
+      }
     }
-    // flip
+    // 호버 뒤집기
     &:hover .profile_img {
       transform: rotateY(180deg);
     }
+    &:hover .flip {
+      transform: rotateY(360deg);
+    }
     // border
-    .profile_border {
+    &::after {
+      content: "";
       background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10000' ry='10000' stroke='white' stroke-width='10' stroke-dasharray='6%2c 20' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
       width: 100%;
       aspect-ratio: 1/1;
       position: absolute;
       border-radius: 50%;
       animation: rotation 10s infinite linear;
-
-      &.light {
-        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10000' ry='10000' stroke='rgba(15, 20, 25, 1)' stroke-width='10' stroke-dasharray='6%2c 20' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
-      }
+    }
+    &.light::after {
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10000' ry='10000' stroke='rgba(15, 20, 25, 1)' stroke-width='10' stroke-dasharray='6%2c 20' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
     }
 
     @keyframes rotation {
@@ -73,38 +80,62 @@
     }
   }
 
+  .profile_flip {
+    margin-top: 1rem;
+    padding: 1rem 0;
+    font-family: "IBMPlexSansKR";
+    opacity: 0.5;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 7px;
+
+    &:hover {
+      background-color: lighten(rgba(15, 20, 25, 1), 10%);
+    }
+    &.light:hover {
+      background-color: darken(white, 10%);
+    }
+  }
+
+  // 글 영역
   .text_area {
     width: 55%;
     height: 65%;
     position: relative;
     display: flex;
     align-items: center;
-
+    flex-direction: column;
+    // 위 분류 탭
     .tab {
       list-style: none;
       display: flex;
       justify-content: space-evenly;
       padding: 0;
-      align-items: flex-end;
-      height: 4vw;
       margin: 0;
-      position: absolute;
       width: 100%;
-      top: 0;
       border-bottom: 1px solid white;
+      margin-bottom: 2rem;
 
       &.light {
         border-bottom: 1px solid rgba(15, 20, 25, 1);
       }
 
       li {
-        opacity: 0.5;
+        opacity: 0.15;
         transition: 0.2s;
         cursor: pointer;
         font-size: calc(0.5vw + 12px);
+        width: 33.333%;
+        height: 5vw;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
 
         span {
-          font-size: calc(2vw + 12px);
+          &:nth-child(1) {
+            font-size: calc(2vw + 12px);
+            line-height: calc(2vw + 12px);
+          }
         }
 
         &:hover {
@@ -119,26 +150,190 @@
       }
     }
 
+    // 탭 내용
     .tab_body {
       display: none;
       width: 100%;
+      flex-grow: 1;
+      font-family: "IBMPlexSansKR";
 
-      &.active {
-        display: block;
+      // 소개글
+      &.About {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &.active {
+          display: flex;
+        }
+
+        h1 {
+          font-size: 2.8vw;
+          position: relative;
+          margin: 0;
+        }
+
+        .about_list {
+          font-size: 1.2rem;
+          text-align: left;
+          margin-top: 2rem;
+
+          li {
+            margin: 0.3rem 0;
+          }
+        }
+      }
+      // 정보
+      &.Info {
+        grid-template-columns: 1fr 1fr;
+        overflow: auto;
+        padding: 0 2rem;
+        box-sizing: border-box;
+
+        &.active {
+          display: grid;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+        }
+
+        > div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px dashed;
+          padding: 2rem 0;
+          // 전체 적용
+          span {
+            width: 50%;
+
+            &:nth-child(1) {
+              font-size: 1.7rem;
+              opacity: 0.7;
+            }
+
+            &:nth-child(2) {
+              font-size: 1.2rem;
+            }
+          }
+          // 이름 부분
+          &:nth-child(1) {
+            grid-column: 1 / 3;
+
+            span {
+              &:nth-child(1) {
+                width: 25%;
+              }
+
+              &:nth-child(2) {
+                width: 50%;
+              }
+            }
+
+            div {
+              display: flex;
+              width: 25%;
+              justify-content: center;
+
+              .button_comp {
+                aspect-ratio: 1/1;
+                display: flex;
+                align-items: center;
+                font-size: 1.2rem;
+                opacity: 0.5;
+              }
+            }
+          }
+          // 생년월일 부터 경력
+          &:nth-child(n + 2):nth-child(-n + 5):nth-child(even) {
+            margin-right: 0.5rem;
+          }
+          &:nth-child(n + 2):nth-child(-n + 5):nth-child(odd) {
+            margin-left: 0.5rem;
+          }
+          // 학력 부터 자격증
+          &:nth-child(n + 6) {
+            grid-column: 1 / 3;
+            flex-direction: column;
+
+            span {
+              width: 100%;
+              margin: 0;
+              margin-bottom: 1rem;
+            }
+
+            table {
+              width: 100%;
+
+              td {
+                padding: 0.25rem 0;
+
+                &:first-child {
+                  text-align: left;
+                  width: 25%;
+                }
+                &:nth-child(2) {
+                  width: 50%;
+                }
+                &:last-child {
+                  text-align: right;
+                  width: 25%;
+                }
+              }
+            }
+          }
+          // 자격증
+          &:last-child {
+            border: none;
+
+            tr:nth-child(n + 2) {
+              display: none;
+              opacity: 0.5;
+            }
+
+            table.active {
+              tr:nth-child(n + 2) {
+                display: table-row;
+              }
+            }
+
+            .button_comp {
+              aspect-ratio: 1/1;
+              height: 2.5rem;
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+
+              span {
+                margin: 0;
+                font-size: 2rem;
+              }
+
+              &::before {
+                content: "관련없는 자격증도 보기";
+                position: absolute;
+                bottom: -60%;
+                white-space: nowrap;
+                font-size: 0.9rem;
+                opacity: 0;
+                transition: opacity 0.2s;
+                transition-delay: 0.2s;
+              }
+
+              &:hover::before {
+                opacity: 0.5;
+              }
+            }
+          }
+        }
       }
 
-      h1 {
-        font-size: 2.8vw;
-        font-family: "IBMPlexSansKR";
-      }
-
-      .about_list {
-        font-family: "IBMPlexSansKR";
-        font-size: 1.2rem;
-        text-align: left;
-        
-        li {
-          margin: 0.3rem 0;
+      &.Skill {
+        &.active {
+          display: flex;
         }
       }
     }

@@ -11,6 +11,8 @@ html {
   width: 100vw;
   transition: background-color 150ms, color 150ms;
   position: relative;
+  max-width: 1900px;
+  max-height: 1200px;
 
   &.light {
     background-color: white;
