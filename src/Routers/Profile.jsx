@@ -2,13 +2,15 @@ import classNames from "classnames";
 import { useState } from "react";
 import ButtonComp from "../Components/ButtonComp";
 import "../Css/Profile.scss";
+import skill from "../data/skill.js";
 
 const Profile = ({ light }) => {
   const [tab, Settab] = useState(0);
-  const tabs = ["About", "Info", "Skill"];
   const [flip, setFlip] = useState(false);
   const [namefont, setNamefont] = useState("한글");
   const [licence, setLicence] = useState(false);
+
+  const tabs = ["About", "Info", "Skill"];
 
   return (
     <div className="router">
@@ -34,7 +36,7 @@ const Profile = ({ light }) => {
           </div>
         </div>
         <div className="text_area">
-          <ul className={classNames("tab", light ? "light" : null)}>
+          <ul className="tab">
             {tabs.map((a, i) => (
               <li
                 key={i}
@@ -59,7 +61,7 @@ const Profile = ({ light }) => {
               key={i}
               className={classNames("tab_body", i === tab ? "active" : null, a)}
               onWheel={
-                a === "Info"
+                (a === "Info") | (a === "Skill")
                   ? (e) => {
                       e.stopPropagation();
                     }
@@ -264,7 +266,28 @@ const Profile = ({ light }) => {
               )}
               {a === "Skill" && (
                 <>
-                  <h1>스킬</h1>
+                  {skill.map(({ level, name, img, kind, text }, i) => (
+                    <div key={i}>
+                      <ButtonComp className="skill_item" light={light}>
+                        <div className="skill_box">
+                          <div className="skill_icon">
+                            <div className="skill_level"><span>10</span>/{level}</div>
+                            <img src={img} alt="" />
+                          </div>
+                          <span
+                            dangerouslySetInnerHTML={{ __html: name }}
+                          ></span>
+                        </div>
+                        <div className="skill_info">
+                          <div>
+                            <span>{kind}</span>
+                          </div>
+                          <p>{text}</p>
+                        </div>
+                      </ButtonComp>
+                      <hr />
+                    </div>
+                  ))}
                 </>
               )}
             </div>
