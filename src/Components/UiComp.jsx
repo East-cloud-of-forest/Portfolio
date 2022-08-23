@@ -58,6 +58,8 @@ const UiComp = ({ light, setLight, RouteFunc, hide }) => {
           ))}
         </ul>
       </div>
+
+      <p className={classNames("copyright", location === 'contact' ? "active" : null)}>&copy; Lim Dong Un. All right reserved.</p>
     </>
   );
 };

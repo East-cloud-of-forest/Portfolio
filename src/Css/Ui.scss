@@ -123,3 +123,18 @@
     }
   }
 }
+
+.copyright {
+  z-index: 10;
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0.5;
+  transition: bottom 0.3s;
+
+  &.active {
+    bottom: 0;
+    transition-delay: 0.3s;
+  }
+}

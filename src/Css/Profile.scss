@@ -203,6 +203,7 @@
           // 전체 적용
           span {
             width: 50%;
+            word-break: break-all;
 
             &:nth-child(1) {
               font-size: 1.7rem;
@@ -210,7 +211,7 @@
             }
 
             &:nth-child(2) {
-              font-size: 1.2rem;
+              font-size: 1.1rem;
             }
           }
           // 이름 부분
@@ -224,6 +225,7 @@
 
               &:nth-child(2) {
                 width: 50%;
+                font-size: 1.3rem;
               }
             }
 

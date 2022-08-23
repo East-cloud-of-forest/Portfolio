@@ -38,7 +38,7 @@ export default [
     engname: "",
     subname: "UI / UX 디자인 수료 후 제작한 포트폴리오",
     info: "UI / UX 수업을 수료하면서 제작했던 포트폴리오 입니다. 포트폴리오 내에서 퍼블리싱한 가상 브랜드 두개의 웹을 접속 할 수 있습니다.",
-    day: "2021.11.05 ~ 2022.03.19",
+    day: "2021.05 ~ 2022.08",
     dev: "1인 UI / UX 디자인 및 퍼블리싱",
     git: "",
     url: "https://ecof-portfolio-nare.netlify.app/",
