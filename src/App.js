@@ -1,11 +1,6 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
-import {
-  Routes,
-  Route,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./App.scss";
 import "./Routers/RouterAnimation.scss";
@@ -105,11 +100,8 @@ function App() {
                 <Main light={light} firstMainAnimation={firstMainAnimation} />
               }
             />
-            <Route
-              path="/profile"
-              element={<Profile light={light} />}
-            />
-            <Route path="/project" element={<Project />} />
+            <Route path="/profile" element={<Profile light={light} />} />
+            <Route path="/project" element={<Project light={light} />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </CSSTransition>

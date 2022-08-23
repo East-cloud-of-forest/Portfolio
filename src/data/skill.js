@@ -42,6 +42,13 @@ export default [
     level: 6,
   },
   {
+    name: "Redux",
+    img: require("../imgs/redux.png"),
+    kind: "Library",
+    text: "미들웨어와 함께 사용하여 효율적으로 프로젝트 내의 상태를 전역으로 관리할 수 있습니다.",
+    level: 5,
+  },
+  {
     name: "Vue.js",
     img: require("../imgs/vue.png"),
     kind: "Framework",
