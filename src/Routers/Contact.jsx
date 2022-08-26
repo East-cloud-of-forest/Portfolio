@@ -1,5 +1,6 @@
 import { brands, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import classNames from "classnames";
 import ButtonComp from "../Components/ButtonComp";
 import "../Css/Contact.scss";
 
@@ -23,9 +24,7 @@ const Contact = () => {
           </li>
           <li>
             <ButtonComp
-              onClick={() =>
-                window.open(`https://velog.io/@ecof_`, "_blank")
-              }
+              onClick={() => window.open(`https://velog.io/@ecof_`, "_blank")}
             >
               <FontAwesomeIcon icon={solid("v")} />
             </ButtonComp>
@@ -34,7 +33,7 @@ const Contact = () => {
           <li>
             <ButtonComp
               onClick={() =>
-                window.location.href = "mailto:ecof1911@gmail.com"
+                (window.location.href = "mailto:ecof1911@gmail.com")
               }
             >
               <FontAwesomeIcon icon={solid("envelope")} />
@@ -52,6 +51,9 @@ const Contact = () => {
             <span>kakao</span>
           </li>
         </ul>
+        <p className={classNames("copyright")}>
+          &copy; Lim Dong Un. All right reserved.
+        </p>
       </div>
     </div>
   );

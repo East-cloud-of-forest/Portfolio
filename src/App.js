@@ -97,7 +97,11 @@ function App() {
               index
               path="/"
               element={
-                <Main light={light} firstMainAnimation={firstMainAnimation} />
+                <Main
+                  light={light}
+                  firstMainAnimation={firstMainAnimation}
+                  setRouterNum={setRouterNum}
+                />
               }
             />
             <Route path="/profile" element={<Profile light={light} />} />

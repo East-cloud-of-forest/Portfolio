@@ -1,7 +1,9 @@
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
 import "../Css/Main.scss";
 
-const Main = ({ firstMainAnimation, light }) => {
+const Main = ({ firstMainAnimation, light, setRouterNum }) => {
   return (
     <div
       className={classNames(
@@ -17,6 +19,11 @@ const Main = ({ firstMainAnimation, light }) => {
         <h2>portfolio</h2>
       </div>
       <div className="down_animation" />
+      <div className="down_animation_media" onClick={()=>{setRouterNum(1)}}>
+        <FontAwesomeIcon icon={solid('angle-down')} />
+        <FontAwesomeIcon icon={solid('angle-down')} />
+        <FontAwesomeIcon icon={solid('angle-down')} />
+      </div>
     </div>
   );
 };

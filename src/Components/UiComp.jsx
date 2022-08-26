@@ -42,7 +42,7 @@ const UiComp = ({ light, setLight, RouteFunc, hide }) => {
         )}
       </ButtonComp>
 
-      <div className={classNames("Nav", hide && "hide")}>
+      <div className={classNames("Nav", hide && "hide", light && "light")}>
         <ul>
           {["profile", "project", "contact"].map((a, i) => (
             <li key={i}>
@@ -58,8 +58,6 @@ const UiComp = ({ light, setLight, RouteFunc, hide }) => {
           ))}
         </ul>
       </div>
-
-      <p className={classNames("copyright", location === 'contact' ? "active" : null)}>&copy; Lim Dong Un. All right reserved.</p>
     </>
   );
 };

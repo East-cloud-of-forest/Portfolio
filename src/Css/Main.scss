@@ -46,20 +46,24 @@
 
     &.light {
       h2 {
-        -webkit-text-stroke: 1px rgba(15, 20, 25, 0.3);
+        -webkit-text-stroke: 1px rgba(15, 20, 25, 0.6);
       }
     }
   }
 
   // 스크롤 에니메이션
+  .down_animation_media {
+    display: none;
+  }
   .down_animation {
     width: 30px;
     height: 50px;
     border: 2px solid;
     border-radius: 50px;
     position: absolute;
-    bottom: calc(-2rem + -50px);
+    bottom: 0;
     opacity: 0;
+    display: block;
 
     &::after {
       content: "";
@@ -129,27 +133,31 @@
   }
 }
 
+// 애니메이션
 @keyframes show {
   100% {
     opacity: 1;
     transform: translate(0, 0);
   }
 }
-
 @keyframes back_show {
   100% {
     opacity: 1;
     transform: translate(0, 0);
   }
 }
-
 @keyframes anima_show {
   100% {
-    bottom: 3rem;
+    transform: translate(0, -100%);
     opacity: 1;
   }
 }
-
+@keyframes anima_show_media {
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
 @keyframes anima_text {
   0% {
     opacity: 0.1;
@@ -161,7 +169,6 @@
     opacity: 0.1;
   }
 }
-
 @keyframes scroll_anima {
   0% {
     opacity: 0;
@@ -176,5 +183,89 @@
   100% {
     top: 25%;
     opacity: 0;
+  }
+}
+
+// 탭 크기
+@media (min-width: 768px) and (max-width: 1024px) {
+}
+
+// 모바일 크기
+@media (max-width: 768px) {
+  .main_page {
+    padding: 0 1rem;
+    box-sizing: border-box;
+
+    h1 {
+      font-size: 10.5vw;
+    }
+
+    .main_background {
+      display: flex;
+      justify-content: space-evenly;
+      height: 100%;
+      padding: 2rem 0;
+      box-sizing: border-box;
+      flex-direction: row-reverse;
+
+      h2 {
+        writing-mode: vertical-lr;
+        font-size: 12vh;
+      }
+    }
+
+    .down_animation_media {
+      width: 100%;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      bottom: 0;
+      opacity: 0;
+      transform: translate(0, 100%);
+      animation: anima_show_media 0.3s forwards;
+      animation-delay: 0.5s;
+      cursor: pointer;
+
+      svg {
+        font-size: 3rem;
+
+        &:nth-child(n + 2) {
+          margin-top: -1.5rem;
+        }
+
+        &:nth-child(1) {
+          animation: anima_text 1s infinite;
+          animation-delay: 0.5s;
+        }
+        &:nth-child(2) {
+          animation: anima_text 1s infinite;
+          animation-delay: 0.75s;
+        }
+        &:nth-child(3) {
+          animation: anima_text 1s infinite;
+          animation-delay: 1s;
+        }
+      }
+    }
+
+    .down_animation {
+      display: none;
+    }
+
+    &.firstAnimation {
+      h2 {
+        &:nth-child(1) {
+          transform: translate(0, -5%);
+        }
+        &:nth-child(2) {
+          transform: translate(0, 5%);
+        }
+      }
+
+      .down_animation_media {
+        animation: anima_show_media 0.3s forwards;
+        animation-delay: 1.8s;
+      }
+    }
   }
 }
