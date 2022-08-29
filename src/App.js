@@ -79,7 +79,7 @@ function App() {
   }, [routerNum]);
 
   return (
-    <div className={classNames("App", light && "light")}>
+    <div className={classNames("App", light && "light", routerNum === 0 && 'main')}>
       <UiComp
         light={light}
         setLight={setLight}

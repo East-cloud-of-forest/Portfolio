@@ -42,7 +42,11 @@ html {
 // 모바일 크기
 @media (max-width: 768px) {
   .App {
-    display: flex;
-    flex-direction: column-reverse;
+    padding-bottom: 57px;
+    box-sizing: border-box;
+
+    &.main {
+      padding: 0;
+    }
   }
 }
