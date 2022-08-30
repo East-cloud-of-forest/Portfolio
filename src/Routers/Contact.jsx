@@ -4,7 +4,7 @@ import classNames from "classnames";
 import ButtonComp from "../Components/ButtonComp";
 import "../Css/Contact.scss";
 
-const Contact = () => {
+const Contact = ({ light }) => {
   return (
     <div className="router">
       <div className="contact">
@@ -14,6 +14,7 @@ const Contact = () => {
         <ul>
           <li>
             <ButtonComp
+              light={light}
               onClick={() =>
                 window.open(`https://github.com/East-cloud-of-forest`, "_blank")
               }
@@ -24,6 +25,7 @@ const Contact = () => {
           </li>
           <li>
             <ButtonComp
+              light={light}
               onClick={() => window.open(`https://velog.io/@ecof_`, "_blank")}
             >
               <FontAwesomeIcon icon={solid("v")} />
@@ -32,6 +34,7 @@ const Contact = () => {
           </li>
           <li>
             <ButtonComp
+              light={light}
               onClick={() =>
                 (window.location.href = "mailto:ecof1911@gmail.com")
               }
@@ -42,6 +45,7 @@ const Contact = () => {
           </li>
           <li>
             <ButtonComp
+              light={light}
               onClick={() =>
                 window.open(`https://open.kakao.com/o/s7suL7od`, "_blank")
               }

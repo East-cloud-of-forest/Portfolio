@@ -178,6 +178,12 @@
 
 // 탭 크기
 @media (min-width: 768px) and (max-width: 1024px) {
+  .project_page {
+    height: 100%;
+  }
+  .page_scroll .project_box .project {
+    width: 80%;
+  }
 }
 
 // 모바일 크기

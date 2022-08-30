@@ -106,7 +106,7 @@ function App() {
             />
             <Route path="/profile" element={<Profile light={light} />} />
             <Route path="/project" element={<Project light={light} />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/contact" element={<Contact light={light} />} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>
