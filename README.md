@@ -1,4 +1,4 @@
-# 내잔네잔 My Cup Your Cup - 텀블러 커스텀 쇼핑몰
+# Portfolio
 https://east-cloud-of-forest.github.io/Portfolio/
 
 ## :page_facing_up: Summary
