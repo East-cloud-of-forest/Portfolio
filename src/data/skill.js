@@ -1,26 +1,5 @@
 export default [
   {
-    name: "Html5",
-    img: require("../imgs/html.png"),
-    kind: "Markup Language",
-    text: "폼 및 테이블 등을 사용할수 있고, 페이지를 마크업할 수 있습니다.",
-    level: 9,
-  },
-  {
-    name: "CSS3",
-    img: require("../imgs/css.png"),
-    kind: "Markup Language",
-    text: "애니메이션 등을 이용해 인터렉션을 적용할 수 있고 페이지 스타일 및, 반응형 웹페이지를 제작할 수 있습니다.",
-    level: 9,
-  },
-  {
-    name: "SCSS",
-    img: require("../imgs/scss.png"),
-    kind: "Markup Language",
-    text: "CSS Preprocessor 입니다. 재활용 및 유지보수가 용이하고 기존 CSS를 사용했을 때 보다 가독성이 높은 코드를 작성할 수 있습니다.",
-    level: 6,
-  },
-  {
     name: "Javascript",
     img: require("../imgs/js.png"),
     kind: "Programing Language",
@@ -35,10 +14,10 @@ export default [
     level: 6,
   },
   {
-    name: "jQuery",
-    img: require("../imgs/jquery.png"),
-    kind: "Library",
-    text: "jQuery문법을 이용해 동적 웹 을 제작할 수 있습니다.",
+    name: "Vue.js",
+    img: require("../imgs/vue.png"),
+    kind: "Framework",
+    text: "Vuex 로 상태관리를 할 수 있고 vuetify를 이용한 스타일을 적용해 SPA UI 웹을 작성할 수 있습니다.",
     level: 6,
   },
   {
@@ -49,11 +28,39 @@ export default [
     level: 5,
   },
   {
-    name: "Vue.js",
-    img: require("../imgs/vue.png"),
-    kind: "Framework",
-    text: "Vuex 로 상태관리를 할 수 있고 vuetify를 이용한 스타일을 적용해 SPA UI 웹을 작성할 수 있습니다.",
+    name: "SCSS",
+    img: require("../imgs/scss.png"),
+    kind: "Markup Language",
+    text: "CSS Preprocessor 입니다. 재활용 및 유지보수가 용이하고 기존 CSS를 사용했을 때 보다 가독성이 높은 코드를 작성할 수 있습니다.",
     level: 6,
+  },
+  {
+    name: "jQuery",
+    img: require("../imgs/jquery.png"),
+    kind: "Library",
+    text: "jQuery문법을 이용해 동적 웹 을 제작할 수 있습니다.",
+    level: 6,
+  },
+  {
+    name: "Git",
+    img: require("../imgs/git.png"),
+    kind: "Management Tool",
+    text: "버전 및 코드를 관리하고 Git을 이용해 협업이 가능합니다.",
+    level: 4,
+  },
+  {
+    name: "Html5",
+    img: require("../imgs/html.png"),
+    kind: "Markup Language",
+    text: "폼 및 테이블 등을 사용할수 있고, 페이지를 마크업할 수 있습니다.",
+    level: 9,
+  },
+  {
+    name: "CSS3",
+    img: require("../imgs/css.png"),
+    kind: "Markup Language",
+    text: "애니메이션 등을 이용해 인터렉션을 적용할 수 있고 페이지 스타일 및, 반응형 웹페이지를 제작할 수 있습니다.",
+    level: 9,
   },
   {
     name: "Adobe<br/>Photoshop",
@@ -75,12 +82,5 @@ export default [
     kind: "Design Tool",
     text: "간단한 3D 모델링 및 이미지 제작이 가능합니다.",
     level: 3,
-  },
-  {
-    name: "Git",
-    img: require("../imgs/git.png"),
-    kind: "Management Tool",
-    text: "버전 및 코드를 관리하고 Git을 이용해 협업이 가능합니다.",
-    level: 4,
   },
 ];
