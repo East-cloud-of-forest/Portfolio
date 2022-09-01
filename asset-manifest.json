@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.624fd9ea.css",
-    "main.js": "/Portfolio/static/js/main.3a4825ad.js",
+    "main.css": "/Portfolio/static/css/main.cbb35ff8.css",
+    "main.js": "/Portfolio/static/js/main.cf846aa8.js",
     "static/js/787.dc9ee2bf.chunk.js": "/Portfolio/static/js/787.dc9ee2bf.chunk.js",
     "static/media/uiux.png": "/Portfolio/static/media/uiux.40e0e41b5a37bd4b3501.png",
     "static/media/증명사진.jpg": "/Portfolio/static/media/증명사진.4590de73c77e1fb4bff8.jpg",
@@ -21,12 +21,12 @@
     "static/media/blender.png": "/Portfolio/static/media/blender.2adc911504107e9274a5.png",
     "static/media/jquery.png": "/Portfolio/static/media/jquery.59c0d4d26fb6326be9c3.png",
     "index.html": "/Portfolio/index.html",
-    "main.624fd9ea.css.map": "/Portfolio/static/css/main.624fd9ea.css.map",
-    "main.3a4825ad.js.map": "/Portfolio/static/js/main.3a4825ad.js.map",
+    "main.cbb35ff8.css.map": "/Portfolio/static/css/main.cbb35ff8.css.map",
+    "main.cf846aa8.js.map": "/Portfolio/static/js/main.cf846aa8.js.map",
     "787.dc9ee2bf.chunk.js.map": "/Portfolio/static/js/787.dc9ee2bf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.624fd9ea.css",
-    "static/js/main.3a4825ad.js"
+    "static/css/main.cbb35ff8.css",
+    "static/js/main.cf846aa8.js"
   ]
 }
