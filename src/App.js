@@ -9,7 +9,7 @@ import Contact from "./Routers/Contact";
 import Main from "./Routers/Main";
 import Profile from "./Routers/Profile";
 import Project from "./Routers/Project";
-import browser from "https://cdn.skypack.dev/browser-detect@0.2.28";
+import browserDetect from "browser-detect";
 import OsErrorComp from "./Components/OsErrorComp";
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
   const [rightOs , SetRightOs] = useState(true)
 
   useEffect(()=>{
-    SetRightOs(browser().os.slice(0,3) === 'Mac')
+    SetRightOs(browserDetect().os.slice(0,3) === 'Mac')
   }, [])
 
   // 휠 함수
