@@ -1,0 +1,72 @@
+.OsError {
+  z-index: 9999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid black;
+  padding: 2rem;
+  background-color: white;
+  color: black;
+  border-radius: 11px;
+  font-size: 1.2rem;
+  opacity: 0;
+  transform-origin: left top;
+  animation: show_error 1s forwards;
+  animation-delay: 1.7s;
+
+  button {
+    margin-top: 1rem;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    padding: 0.3rem 1rem;
+    transition: background-color 0.1s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(white, 10%);
+    }
+  }
+}
+
+$center : translate(-50%, -50%);
+$rotate : 2deg;
+
+@keyframes show_error {
+  0% {
+    transform: rotate(0deg) $center;
+  }
+  30% {
+    opacity: 1;
+    transform: rotate(0deg) $center;
+  }
+  35% {
+    transform: rotate(-$rotate) $center;
+  }
+  40% {
+    transform: rotate($rotate) $center;
+  }
+  45% {
+    transform: rotate(-$rotate) $center;
+  }
+  50% {
+    transform: rotate($rotate) $center;
+  }
+  55% {
+    transform: rotate(-$rotate) $center;
+  }
+  60% {
+    transform: rotate($rotate) $center;
+  }
+  65% {
+    transform: rotate(-$rotate) $center;
+  }
+  70% {
+    transform: rotate($rotate) $center;
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) $center;
+  }
+}

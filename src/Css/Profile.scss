@@ -427,15 +427,6 @@
               text-align: left;
             }
           }
-
-          &:hover .skill_box > .skill_icon {
-            & > .skill_level {
-              opacity: 1;
-            }
-            & > img {
-              opacity: 0.5;
-            }
-          }
         }
 
         hr {

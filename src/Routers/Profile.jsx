@@ -266,12 +266,11 @@ const Profile = ({ light }) => {
               )}
               {a === "Skill" && (
                 <>
-                  {skill.map(({ level, name, img, kind, text }, i) => (
+                  {skill.map(({ name, img, kind, text }, i) => (
                     <div key={i}>
                       <ButtonComp className="skill_item" light={light}>
                         <div className="skill_box">
                           <div className="skill_icon">
-                            <div className="skill_level"><span>10</span>/{level}</div>
                             <img src={img} alt="" />
                           </div>
                           <span

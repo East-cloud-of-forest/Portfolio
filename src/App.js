@@ -9,6 +9,8 @@ import Contact from "./Routers/Contact";
 import Main from "./Routers/Main";
 import Profile from "./Routers/Profile";
 import Project from "./Routers/Project";
+import browser from "https://cdn.skypack.dev/browser-detect@0.2.28";
+import OsErrorComp from "./Components/OsErrorComp";
 
 function App() {
   const location = useLocation();
@@ -18,6 +20,11 @@ function App() {
   const [routeActive, setrouteActive] = useState(true);
   const [routeDirection, setRouteDirection] = useState("Down");
   const [firstMainAnimation, setFirstMainAnimation] = useState(true);
+  const [rightOs , SetRightOs] = useState(true)
+
+  useEffect(()=>{
+    SetRightOs(browser().os.slice(0,3) === 'Mac')
+  }, [])
 
   // 휠 함수
   const RouteFunc = (e, target) => {
@@ -80,6 +87,7 @@ function App() {
 
   return (
     <div className={classNames("App", light && "light", routerNum === 0 && 'main')}>
+      {rightOs && <OsErrorComp SetRightOs={SetRightOs} />}
       <UiComp
         light={light}
         setLight={setLight}

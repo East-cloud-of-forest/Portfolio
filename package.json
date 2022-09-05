@@ -12,6 +12,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "babel-plugin-macros": "^3.1.0",
+    "browser-detect": "^0.2.28",
     "classnames": "^2.3.1",
     "gh-pages": "^4.0.0",
     "react": "^18.2.0",
@@ -28,7 +29,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postbuild" :"cp build/index.html build/404.html",
+    "postbuild": "cp build/index.html build/404.html",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
