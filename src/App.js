@@ -21,9 +21,18 @@ function App() {
   const [routeDirection, setRouteDirection] = useState("Down");
   const [firstMainAnimation, setFirstMainAnimation] = useState(true);
   const [rightOs , SetRightOs] = useState(true)
+  function setScreenSize() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
 
   useEffect(()=>{
     SetRightOs(browserDetect().os.slice(0,3) === 'Mac')
+    setScreenSize()
+    window.addEventListener('resize', setScreenSize, false)
+    return (()=>{
+      window.removeEventListener('resize', setScreenSize)
+    })
   }, [])
 
   // 휠 함수
