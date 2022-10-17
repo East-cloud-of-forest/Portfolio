@@ -1,32 +1,26 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.fcc151dd.css",
-    "main.js": "/Portfolio/static/js/main.936527ea.js",
+    "main.css": "/Portfolio/static/css/main.385eaefa.css",
+    "main.js": "/Portfolio/static/js/main.ba4331c5.js",
     "static/js/787.dc9ee2bf.chunk.js": "/Portfolio/static/js/787.dc9ee2bf.chunk.js",
-    "static/media/uiux.png": "/Portfolio/static/media/uiux.40e0e41b5a37bd4b3501.png",
-    "static/media/증명사진.jpg": "/Portfolio/static/media/증명사진.4590de73c77e1fb4bff8.jpg",
+    "static/media/uiux.png": "/Portfolio/static/media/uiux.15ac36d06ea089ac0fc8.png",
     "static/media/Anton-Regular.ttf": "/Portfolio/static/media/Anton-Regular.170b842f9a8cd6150a0d.ttf",
-    "static/media/멀리2.jpg": "/Portfolio/static/media/멀리2.7384d3165d583a893eb4.jpg",
+    "static/media/멀리2.jpg": "/Portfolio/static/media/멀리2.4c496fb1db3d5d30969e.jpg",
     "static/media/Comfortaa-Light.ttf": "/Portfolio/static/media/Comfortaa-Light.2d79c8b673318d831c9b.ttf",
     "static/media/Comfortaa-Bold.ttf": "/Portfolio/static/media/Comfortaa-Bold.059cc3e0c5d00a88354f.ttf",
-    "static/media/react.png": "/Portfolio/static/media/react.305f7d2225889354dcca.png",
-    "static/media/redux.png": "/Portfolio/static/media/redux.188b4b7b923e0dcfd3ca.png",
-    "static/media/내잔네잔.png": "/Portfolio/static/media/내잔네잔.72806cd74c561b5fbf77.png",
-    "static/media/코디캐스터.png": "/Portfolio/static/media/코디캐스터.c79ca3cfa9b2df172118.png",
-    "static/media/메타보드.png": "/Portfolio/static/media/메타보드.0f4c15faab5c4415f875.png",
-    "static/media/scss.png": "/Portfolio/static/media/scss.77a1cbce35d598cf94c1.png",
-    "static/media/js.png": "/Portfolio/static/media/js.0e836599e36ce0e74e89.png",
-    "static/media/html.png": "/Portfolio/static/media/html.8bf038547a15d04e0549.png",
-    "static/media/css.png": "/Portfolio/static/media/css.6ff70445747d9d37c578.png",
-    "static/media/blender.png": "/Portfolio/static/media/blender.2adc911504107e9274a5.png",
-    "static/media/jquery.png": "/Portfolio/static/media/jquery.59c0d4d26fb6326be9c3.png",
+    "static/media/react.png": "/Portfolio/static/media/react.e623f911a5b2dc9f7613.png",
+    "static/media/redux.png": "/Portfolio/static/media/redux.3e88f7a698286a26ad61.png",
+    "static/media/내잔네잔.png": "/Portfolio/static/media/내잔네잔.28cbedba3f7e5033f455.png",
+    "static/media/코디캐스터.png": "/Portfolio/static/media/코디캐스터.e58985c85c66836488ae.png",
+    "static/media/증명사진.jpg": "/Portfolio/static/media/증명사진.03aec15f17f2a3e8605b.jpg",
+    "static/media/메타보드.png": "/Portfolio/static/media/메타보드.96ae27093731fe6502cf.png",
     "index.html": "/Portfolio/index.html",
-    "main.fcc151dd.css.map": "/Portfolio/static/css/main.fcc151dd.css.map",
-    "main.936527ea.js.map": "/Portfolio/static/js/main.936527ea.js.map",
+    "main.385eaefa.css.map": "/Portfolio/static/css/main.385eaefa.css.map",
+    "main.ba4331c5.js.map": "/Portfolio/static/js/main.ba4331c5.js.map",
     "787.dc9ee2bf.chunk.js.map": "/Portfolio/static/js/787.dc9ee2bf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fcc151dd.css",
-    "static/js/main.936527ea.js"
+    "static/css/main.385eaefa.css",
+    "static/js/main.ba4331c5.js"
   ]
 }
