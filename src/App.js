@@ -102,6 +102,7 @@ function App() {
         setLight={setLight}
         RouteFunc={RouteFunc}
         hide={routerNum === 0 ? true : false}
+        routerNum={routerNum}
       />
       <TransitionGroup className="transition-group">
         <CSSTransition

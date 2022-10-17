@@ -12,60 +12,72 @@ $delay: 100ms;
   .Up-enter {
     opacity: 0;
     transform: translate(0, -$location);
+    will-change: auto;
   }
   .Up-enter-active {
     opacity: 1;
     transform: translate(0);
     transition: opacity $speed, transform $speed;
     transition-delay: $delay;
+    will-change: auto;
   }
   .Up-exit {
     opacity: 1;
     transform: translate(0);
+    will-change: auto;
   }
   .Up-exit-active {
     opacity: 0;
     transform: translate(0, $location);
     transition: opacity $speed, transform $speed;
+    will-change: auto;
   }
   // 내려가는 애니메이션
   .Down-enter {
     opacity: 0;
     transform: translate(0, $location);
+    will-change: auto;
   }
   .Down-enter-active {
     opacity: 1;
     transform: translate(0);
     transition: opacity $speed, transform $speed;
     transition-delay: $delay;
+    will-change: auto;
   }
   .Down-exit {
     opacity: 1;
     transform: translate(0);
+    will-change: auto;
   }
   .Down-exit-active {
     opacity: 0;
     transform: translate(0, -$location);
     transition: opacity $speed, transform $speed;
+    will-change: auto;
   }
   // 클릭시 애니메이션
   .Click-enter {
     opacity: 0;
     transform: scale(0.7);
+    will-change: auto;
   }
   .Click-enter-active {
     opacity: 1;
     transform: scale(1);
     transition: opacity $speed, transform $speed;
     transition-delay: $delay;
+    will-change: auto;
   }
   .Click-exit {
     opacity: 1;
     transform: scale(1);
+    will-change: auto;
   }
   .Click-exit-active {
     opacity: 0;
     transform: scale(0.7);
     transition: opacity $speed, transform $speed;
+    will-change: auto;
   }
 }

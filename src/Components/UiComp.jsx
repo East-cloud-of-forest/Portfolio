@@ -5,7 +5,7 @@ import classNames from "classnames";
 import ButtonComp from "./ButtonComp";
 import { useLocation } from "react-router-dom";
 
-const UiComp = ({ light, setLight, RouteFunc, hide }) => {
+const UiComp = ({ light, setLight, RouteFunc, hide, routerNum }) => {
   const location = useLocation().pathname.slice(1);
 
   return (
@@ -58,6 +58,10 @@ const UiComp = ({ light, setLight, RouteFunc, hide }) => {
           ))}
         </ul>
       </div>
+
+      <p className={classNames("copyright", routerNum===3 && 'active')}>
+        &copy; Lim Dong Un. All right reserved.
+      </p>
     </>
   );
 };

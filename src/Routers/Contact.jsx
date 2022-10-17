@@ -1,6 +1,5 @@
 import { brands, solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import classNames from "classnames";
 import ButtonComp from "../Components/ButtonComp";
 import "../Css/Contact.scss";
 
@@ -55,9 +54,6 @@ const Contact = ({ light }) => {
             <span>kakao</span>
           </li>
         </ul>
-        <p className={classNames("copyright")}>
-          &copy; Lim Dong Un. All right reserved.
-        </p>
       </div>
     </div>
   );
