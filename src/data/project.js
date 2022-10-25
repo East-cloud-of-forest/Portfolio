@@ -8,7 +8,7 @@ export default [
     day: "2022.05.26 ~ 2022.07.14",
     dev: "5인 팀 프로젝트",
     git: "https://github.com/East-cloud-of-forest/My-Cup-Your-Cup",
-    url: "https://east-cloud-of-forest.github.io/MyCup-YourCup-build/",
+    url: "https://east-cloud-of-forest.github.io/My-Cup-Your-Cup/",
   },
   {
     img: require('../imgs/메타보드.png'),
